@@ -1,0 +1,6 @@
+{
+    "answer": "answerText",
+    "clues": [
+        "clue1", "clue2", "clue3", "clue4", "clue5"
+    ]
+}
