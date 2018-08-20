@@ -1,6 +1,14 @@
-{
+[
+  {
     "answer": "answerText",
     "clues": [
-        "clue1", "clue2", "clue3", "clue4", "clue5"
+      "clue1", "clue2", "clue3", "clue4", "clue5"
     ]
-}
+  },
+  {
+    "answer": "answerText2",
+    "clues": [
+      "cluea1", "cluea2", "cluea3", "cluea4", "cluea5"
+    ]
+  }
+]
