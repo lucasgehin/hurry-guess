@@ -10,5 +10,17 @@
     "clues": [
       "cluea1", "cluea2", "cluea3", "cluea4", "cluea5"
     ]
+  },
+  {
+    "answer": "answerText3",
+    "clues": [
+      "clueb1", "clueb2", "clueb3", "clueb4", "clueb5"
+    ]
+  },
+  {
+    "answer": "answerText4",
+    "clues": [
+      "cluec1", "cluec2", "cluec3", "cluec4", "cluec5"
+    ]
   }
 ]

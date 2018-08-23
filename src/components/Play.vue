@@ -1,17 +1,21 @@
 <template>
     <div>
       <div v-if="gameRunning">
-        <div v-if="gamePaused" class="pause-screen">
+        <div v-if="gamePaused" class="mask">
         <span @click="setGamePaused(false)">Reprendre</span>
         <router-link to="/">Quitter</router-link>
       </div>
       <div v-if="!gamePaused">
         <span @click="setGamePaused(true)">set pause</span>
       </div>
-      <div v-if="timer !== false">{{timer}}</div>
+      <div v-if="timer !== false">
+        <div v-if="currentQuestion === 0">La partie commence dans</div>
+        <div v-else>Prochaine question dans</div>
+        {{timer}}
+      </div>
       <div v-if="clue">{{clue}}</div>
       </div>
-      <div v-else>
+      <div v-else class="mask">
         fini
       </div>
     </div>
@@ -20,23 +24,20 @@
 <script>
 import questions from '@/assets/data/question.json'
 
-console.log(questions)
-
 var timer = false
 var changeTime = 3000
 var currentQuestion = 0
-var maxQuestion = 1
+var maxQuestion = 3
 var currrentClue = 0
-var maxClue = 4
-
-console.log(questions[currentQuestion])
+var maxClue = 5
 
 export default {
   data () {
     return {
       gameRunning: false,
       gamePaused: false,
-      question: questions[currentQuestion],
+      questions: questions,
+      currentQuestion: currentQuestion,
       currrentClue: currrentClue,
       timer: timer,
       clue: false
@@ -48,10 +49,7 @@ export default {
     },
     runGame () {
       this.gameRunning = true
-      this.runTimer()
-        .then((data) => {
-          this.timer = false
-        })
+      this.runQuestion()
     },
     runTimer () {
       return new Promise((resolve, reject) => {
@@ -65,6 +63,38 @@ export default {
           }
         }.bind(this), 1000)
       })
+    },
+    runQuestion () {
+      this.runTimer()
+        .then((data) => {
+          this.timer = false
+          this.runClue()
+            .then((data) => {
+              this.clue = false
+              this.currrentClue = 0
+              this.currentQuestion++
+              if (this.currentQuestion < maxQuestion) {
+                this.runQuestion()
+              } else {
+                this.gameRunning = false
+              }
+            })
+        })
+    },
+    runClue () {
+      return new Promise((resolve, reject) => {
+        this.clue = this.questions[this.currentQuestion]['clues'][this.currrentClue]
+        this.currrentClue++
+        const clueInterval = setInterval(function () {
+          this.clue = this.questions[this.currentQuestion]['clues'][this.currrentClue]
+          if (this.currrentClue === maxClue) {
+            clearInterval(clueInterval)
+            resolve()
+          } else {
+            this.currrentClue++
+          }
+        }.bind(this), changeTime)
+      })
     }
   },
   beforeMount () {
@@ -74,7 +104,7 @@ export default {
 </script>
 
 <style>
-  .pause-screen {
+  .mask {
     position: fixed;
     top: 0;
     bottom: 0;
