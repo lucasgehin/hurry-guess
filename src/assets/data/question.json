@@ -1,26 +1,56 @@
 [
   {
-    "answer": "answerText",
+    "answer": "Carapuce",
     "clues": [
-      "clue1", "clue2", "clue3", "clue4", "clue5"
+      "pokeball", "lightblue", "water", "turtle", "sunglasses"
     ]
   },
   {
-    "answer": "answerText2",
+    "answer": "Salamèche",
     "clues": [
-      "cluea1", "cluea2", "cluea3", "cluea4", "cluea5"
+      "pokeball", "orange", "lizard", "fire", "claw"
     ]
   },
   {
-    "answer": "answerText3",
+    "answer": "Titanic",
     "clues": [
-      "clueb1", "clueb2", "clueb3", "clueb4", "clueb5"
+      "cinema", "boat", "iceberg", "sos", "love"
     ]
   },
   {
-    "answer": "answerText4",
+    "answer": "Père Noël",
     "clues": [
-      "cluec1", "cluec2", "cluec3", "cluec4", "cluec5"
+      "fictive-man", "red", "beard", "snow", "gift"
+    ]
+  },
+  {
+    "answer": "Pinocchio",
+    "clues": [
+      "disney", "wood", "nose", "puppet", "whale"
+    ]
+  },
+  {
+    "answer": "Aladdin",
+    "clues": [
+      "disney", "lamp", "palace-arabian", "carpet", "love"
+    ]
+  },
+  {
+    "answer": "Blanche Neige",
+    "clues": [
+      "disney", "white", "snow", "apple", "sleeping"
+    ]
+  },
+  {
+    "answer": "Hulk",
+    "clues": [
+      "comic", "cinema", "green", "strong", "radiation"
+    ]
+  },
+  {
+    "answer": "Professeur Charles Xavier",
+    "clues": [
+      "comic", "cinema", "wheelchair", "old-man", "bald"
     ]
   }
 ]
