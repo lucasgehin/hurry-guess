@@ -15,8 +15,11 @@
       </div>
       <div v-if="clue">{{clue}}</div>
       </div>
-      <div v-else class="mask">
-        fini
+      <div v-else>
+        Réponses
+        <div v-for="question in questions">
+          {{question.answer}}
+        </div>
       </div>
     </div>
 </template>
