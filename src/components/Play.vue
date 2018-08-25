@@ -8,10 +8,10 @@
       <div v-if="!gamePaused">
         <span @click="setGamePaused(true)" class="pause">set pause</span>
       </div>
-      <div v-if="timer !== false">
-        <div v-if="currentQuestion === 0">La partie commence dans</div>
-        <div v-else>Prochaine question dans</div>
-        {{timer}}
+      <div v-if="timer !== false" class="centered">
+        <div v-if="currentQuestion === 0" class="text--big">La partie commence dans</div>
+        <div v-else class="text--big">Prochaine question dans</div>
+        <div class="text--enormous text--bold">{{timer}}</div>
       </div>
       <div v-if="clue" class="clue">
         <img :src="'static/clue/' + clue + '.png'">
@@ -126,6 +126,24 @@ export default {
 </script>
 
 <style>
+  .text--big {
+    font-size: 2rem;
+  }
+  .text--enormous {
+    font-size: 5rem;
+  }
+  .text--bold {
+    font-weight: bold;
+  }
+
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
   .mask {
     position: fixed;
     top: 0;
