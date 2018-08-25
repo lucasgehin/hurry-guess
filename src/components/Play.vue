@@ -27,7 +27,14 @@
 </template>
 
 <script>
-import json from '@/assets/data/question.json'
+import jsonCinema from '@/assets/data/cinema.json'
+import jsonGeneral from '@/assets/data/general.json'
+import jsonHistory from '@/assets/data/history.json'
+import jsonSport from '@/assets/data/sport.json'
+import jsonVideoGame from '@/assets/data/videogame.json'
+import jsonQuestion from '@/assets/data/question.json'
+
+var json = [].concat(jsonCinema, jsonGeneral, jsonHistory, jsonSport, jsonVideoGame, jsonQuestion)
 
 var questions = json
 questions = questions.sort(function () {

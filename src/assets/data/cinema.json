@@ -1,0 +1,68 @@
+[
+  {
+    "answer": "Titanic",
+    "clues": [
+      "cinema", "boat", "iceberg", "sos", "love"
+    ]
+  },
+  {
+    "answer": "Pinocchio",
+    "clues": [
+      "disney", "wood", "nose", "puppet", "whale"
+    ]
+  },
+  {
+    "answer": "Aladdin",
+    "clues": [
+      "disney", "lamp", "palace-arabian", "carpet", "love"
+    ]
+  },
+  {
+    "answer": "Blanche Neige",
+    "clues": [
+      "disney", "white", "snow", "apple", "sleeping"
+    ]
+  },
+  {
+    "answer": "Harry Potter",
+    "clues": [
+      "cinema", "castle", "magic-wand", "owl", "thunder"
+    ]
+  },
+  {
+    "answer": "Captain America",
+    "clues": [
+      "comic", "cinema", "strong", "shield", "united-states"
+    ]
+  },
+  {
+    "answer": "Hulk",
+    "clues": [
+      "comic", "cinema", "green", "strong", "radiation"
+    ]
+  },
+  {
+    "answer": "Professeur Charles Xavier",
+    "clues": [
+      "comic", "cinema", "wheelchair", "old-man", "bald"
+    ]
+  },
+  {
+    "answer": "Le manège enchanté",
+    "clues": [
+      "television", "carousel", "dog", "snail", "cow"
+    ]
+  },
+  {
+    "answer": "Indiana Jones",
+    "clues": [
+      "cinema", "hat", "whip", "snake", "treasure"
+    ]
+  },
+  {
+    "answer": "Jumanji",
+    "clues": [
+      "cinema", "dice", "forest", "snake", "rifle"
+    ]
+  }
+]
