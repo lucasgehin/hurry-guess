@@ -71,7 +71,7 @@ export default {
     },
     runTimer () {
       return new Promise((resolve, reject) => {
-        var countdown = 10
+        var countdown = 5
         if (this.currentQuestion === 0) {
           countdown = 5
         }
