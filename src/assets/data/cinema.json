@@ -64,5 +64,47 @@
     "clues": [
       "cinema", "dice", "forest", "snake", "rifle"
     ]
+  },
+  {
+    "answer": "Pirate des Caraïbes",
+    "clues": [
+      "cinema", "octopus", "zombie", "treasure", "pirate"
+    ]
+  },
+  {
+    "answer": "Le diner de con",
+    "clues": [
+      "cinema", "france", "table", "diner", "match"
+    ]
+  },
+  {
+    "answer": "Alice au pays des merveilles",
+    "clues": [
+      "disney", "cupcake", "cards", "alarm-clock", "rabbit"
+    ]
+  },
+  {
+    "answer": "Cendrillon",
+    "clues": [
+      "disney", "feminine", "crown", "maid", "pumpkin"
+    ]
+  },
+  {
+    "answer": "Legolas",
+    "clues": [
+      "fictive-man", "masculine", "ring", "bow", "ear"
+    ]
+  },
+  {
+    "answer": "Les Simpsons",
+    "clues": [
+      "television", "family", "sofa", "yellow", "donuts"
+    ]
+  },
+  {
+    "answer": "Dora l'exploratrice",
+    "clues": [
+      "television", "feminine", "map", "portfolio", "monkey"
+    ]
   }
 ]

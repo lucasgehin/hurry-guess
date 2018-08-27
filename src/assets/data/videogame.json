@@ -10,5 +10,29 @@
     "clues": [
       "pokeball", "orange", "lizard", "fire", "claw"
     ]
+  },
+  {
+    "answer": "Sonic",
+    "clues": [
+      "game-controller", "hedgehog", "blue", "circle", "coin"
+    ]
+  },
+  {
+    "answer": "Mario",
+    "clues": [
+      "fictive-man", "red", "cap", "coin", "plumbing"
+    ]
+  },
+  {
+    "answer": "Donkey Kong",
+    "clues": [
+      "game-controller", "barrel", "banana", "tie", "monkey"
+    ]
+  },
+  {
+    "answer": "Enjoy Phoenix",
+    "clues": [
+      "www", "youtube", "feminine", "lipstick", "bird"
+    ]
   }
 ]
