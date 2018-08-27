@@ -41,7 +41,7 @@ questions = questions.sort(function () {
   return 0.5 - Math.random()
 })
 
-var maxQuestion = 5
+var maxQuestion = 10
 var gameQuestions = questions.slice(0, maxQuestion)
 var timer = false
 var changeTime = 2000
@@ -77,11 +77,13 @@ export default {
         }
         this.timer = countdown
         const timerInterval = setInterval(function () {
-          if (this.timer === 0) {
-            clearInterval(timerInterval)
-            resolve()
-          } else {
-            this.timer = this.timer - 1
+          if (!this.gamePaused) {
+            if (this.timer === 0) {
+              clearInterval(timerInterval)
+              resolve()
+            } else {
+              this.timer = this.timer - 1
+            }
           }
         }.bind(this), 1000)
       })
@@ -108,12 +110,14 @@ export default {
         this.clue = this.questions[this.currentQuestion]['clues'][this.currrentClue]
         this.currrentClue++
         const clueInterval = setInterval(function () {
-          this.clue = this.questions[this.currentQuestion]['clues'][this.currrentClue]
-          if (this.currrentClue === maxClue) {
-            clearInterval(clueInterval)
-            resolve()
-          } else {
-            this.currrentClue++
+          if (!this.gamePaused) {
+            this.clue = this.questions[this.currentQuestion]['clues'][this.currrentClue]
+            if (this.currrentClue === maxClue) {
+              clearInterval(clueInterval)
+              resolve()
+            } else {
+              this.currrentClue++
+            }
           }
         }.bind(this), changeTime)
       })
