@@ -6,7 +6,7 @@
         <router-link to="/">Quitter</router-link>
       </div>
       <div v-if="!gamePaused">
-        <span @click="setGamePaused(true)" class="pause">set pause</span>
+        <span @click="setGamePaused(true)" class="pause"><img src="static/pause.png"></span>
       </div>
       <div v-if="timer !== false" class="centered">
         <div v-if="currentQuestion === 0" class="text--big">La partie commence dans</div>
@@ -18,10 +18,15 @@
       </div>
       </div>
       <div v-else>
-        Réponses
-        <div v-for="question in questions" :key="question.answer">
-          {{question.answer}}
-        </div>
+        <div class="text--huge">Réponses</div>
+        <table class="text--medium">
+          <tr v-for="question in questions" :key="question.answer">
+            <td>{{question.answer}}</td>
+          </tr>
+        </table>
+        <a href="javascript://" @click="replay()" class="button button--big">Rejouer</a>
+        <br>
+        <router-link to="/" class="button button--ghost button--big">Quitter</router-link>
       </div>
     </div>
 </template>
@@ -43,6 +48,7 @@ questions = questions.sort(function () {
 
 var maxQuestion = 10
 var gameQuestions = questions.slice(0, maxQuestion)
+var cursorQuestion = maxQuestion
 var timer = false
 var changeTime = 2000
 var currentQuestion = 0
@@ -121,6 +127,12 @@ export default {
           }
         }.bind(this), changeTime)
       })
+    },
+    replay () {
+      this.questions = questions.slice(cursorQuestion, cursorQuestion + maxQuestion)
+      cursorQuestion = cursorQuestion + maxQuestion
+      this.currentQuestion = 0
+      this.runGame()
     }
   },
   beforeMount () {
@@ -130,8 +142,14 @@ export default {
 </script>
 
 <style>
+  .text--medium {
+    font-size: 1.5rem;
+  }
   .text--big {
     font-size: 2rem;
+  }
+  .text--huge {
+    font-size: 3rem;
   }
   .text--enormous {
     font-size: 5rem;
@@ -154,7 +172,8 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
   }
 
   .pause {
@@ -176,5 +195,38 @@ export default {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  table td {
+    border: 1px solid;
+  }
+
+  .button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 0.75em 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 1em 0;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border-radius: 2em;
+  }
+  .button--ghost {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+  }
+
+  .button--big {
+    font-size: 1.5em;
   }
 </style>
